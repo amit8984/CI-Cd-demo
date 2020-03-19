@@ -1,5 +1,5 @@
-use warehouse dev_engineer_wh
-use edm_confirmed_dev
-use schema scratch
+use warehouse DEV_ENGINEER_WH;
+use edm_confirmed_dev;
+use schema scratch;
 
-show tables;
+select * from Banner;
