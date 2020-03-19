@@ -2,16 +2,24 @@ pipeline {
    agent any
 
    stages {
-      stage('Showing databases') {
+      stage('CreateTable') {
           
          steps {
-            bat 'snowsql -c myconnection --config C:\\Users\\91827\\.snowsql\\config -f show_database.sql'
+            bat 'snowsql -c myconnection --config C:\\Users\\91827\\.snowsql\\config -f create_table.sql'
          }
          
       }
-      stage('printing tables list'){
+      
+      stage('InsertElement') {
+          
+         steps {
+            bat 'snowsql -c myconnection --config C:\\Users\\91827\\.snowsql\\config -f Insert_element.sql'
+         }
+         
+      }
+      stage('TableInformation'){
           steps{
-              bat 'snowsql -c myconnection --config C:\\Users\\91827\\.snowsql\\config -f show_tables_list.sql'
+              bat 'snowsql -c myconnection --config C:\\Users\\91827\\.snowsql\\config -f Information_of_table.sql'
              
           }
           
