@@ -11,7 +11,7 @@ pipeline {
       }
       stage('Print'){
           steps{
-              bat 'snowsql -f show_tables_list"'
+              bat 'snowsql -f show_tables_list.sql'
              
           }
           
